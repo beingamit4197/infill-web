@@ -1,29 +1,19 @@
-import {
-  TopNavBar,
-  Hero,
-  ProductShowcase,
-  Features,
-  Pricing,
-  Contact,
-  Footer,
-} from "./components"
-import { useScrollReveal } from "./hooks/useScrollReveal"
+import { BrowserRouter, Route, Routes } from "react-router-dom"
+import { DocsPage } from "./pages/DocsPage"
+import { HomePage } from "./pages/HomePage"
+import { PrivacyPolicyPage } from "./pages/PrivacyPolicyPage"
+import { SupportPage } from "./pages/SupportPage"
 
 function App() {
-  useScrollReveal()
-
   return (
-    <div className="bg-background overflow-x-hidden selection:bg-primary-container selection:text-on-primary-container">
-      <TopNavBar />
-      <main className="pt-32">
-        <Hero />
-        <ProductShowcase />
-        <Features />
-        <Pricing />
-        <Contact />
-      </main>
-      <Footer />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/docs" element={<DocsPage />} />
+        <Route path="/support" element={<SupportPage />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
+      </Routes>
+    </BrowserRouter>
   )
 }
 

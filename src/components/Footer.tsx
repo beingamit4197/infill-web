@@ -1,11 +1,16 @@
-const footerLinks = {
-  Legal: [
-    { label: "Terms", href: "#" },
-    { label: "Privacy", href: "#" },
-  ],
+import { Link } from "react-router-dom"
+import { GITHUB_REPO_URL } from "../lib/site"
+
+type FooterLink =
+  | { label: string; to: string }
+  | { label: string; href: string }
+
+const footerLinks: Record<string, FooterLink[]> = {
+  Legal: [{ label: "Privacy", to: "/privacy-policy" }],
   Support: [
-    { label: "Docs", href: "#" },
-    { label: "GitHub", href: "#" },
+    { label: "Docs", to: "/docs" },
+    { label: "Help", to: "/support" },
+    { label: "GitHub", href: GITHUB_REPO_URL },
   ],
 }
 
@@ -17,7 +22,7 @@ export function Footer() {
           Infill
         </div>
         <div className="text-secondary font-body-md text-body-md opacity-60">
-          &copy; 2024 Infill. All rights reserved.
+          &copy; {new Date().getFullYear()} Infill. All rights reserved.
         </div>
       </div>
       <div className="flex flex-wrap gap-xl">
@@ -26,15 +31,27 @@ export function Footer() {
             <span className="font-label-sm text-label-sm text-primary uppercase tracking-widest mb-xs">
               {section}
             </span>
-            {links.map((link) => (
-              <a
-                key={link.label}
-                className="text-secondary font-body-md text-body-md hover:text-primary transition-colors duration-200"
-                href={link.href}
-              >
-                {link.label}
-              </a>
-            ))}
+            {links.map((link) =>
+              "to" in link ? (
+                <Link
+                  key={link.label}
+                  to={link.to}
+                  className="text-secondary font-body-md text-body-md hover:text-primary transition-colors duration-200"
+                >
+                  {link.label}
+                </Link>
+              ) : (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-secondary font-body-md text-body-md hover:text-primary transition-colors duration-200"
+                >
+                  {link.label}
+                </a>
+              ),
+            )}
           </div>
         ))}
       </div>

@@ -1,53 +1,46 @@
+import { Link } from "react-router-dom"
+import { GITHUB_ISSUES_URL, GITHUB_NEW_ISSUE_URL } from "../lib/site"
+
 export function Contact() {
   return (
-    <section className="max-w-4xl mx-auto px-container-padding py-xl mb-xl">
-      <div className="text-center mb-xl">
-        <h2 className="font-headline-lg text-headline-lg mb-sm">
+    <section className="max-w-7xl mx-auto px-container-padding py-xl mb-xl">
+      <div className="w-full max-w-2xl mx-auto bg-surface-container-lowest rounded-xl p-xl md:px-2xl md:py-2xl bento-card-shadow text-center">
+        <h2 className="font-headline-lg text-headline-lg text-primary mb-4">
           Get in Touch
         </h2>
-        <p className="font-body-md text-body-md text-secondary">
-          Have questions or want to contribute? We&apos;re active on GitHub.
+        <p className="font-body-md text-body-md text-secondary leading-relaxed mb-10">
+          Questions, bug reports, and contributions are handled on GitHub.
+          Check the support FAQ first — it covers scanning, AI features, and
+          image uploads.
         </p>
-      </div>
-      <div className="space-y-lg">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-lg">
-          <div className="space-y-sm">
-            <label className="font-label-sm text-label-sm text-secondary uppercase tracking-widest px-xs">
-              Name
-            </label>
-            <input
-              className="w-full bg-surface-container-low border-none rounded-lg text-primary placeholder:text-[#555555] focus:bg-surface-container-high focus:ring-0 transition-all py-md px-lg"
-              placeholder="Your name"
-              type="text"
-            />
-          </div>
-          <div className="space-y-sm">
-            <label className="font-label-sm text-label-sm text-secondary uppercase tracking-widest px-xs">
-              Email
-            </label>
-            <input
-              className="w-full bg-surface-container-low border-none rounded-lg text-primary placeholder:text-[#555555] focus:bg-surface-container-high focus:ring-0 transition-all py-md px-lg"
-              placeholder="your@email.com"
-              type="email"
-            />
-          </div>
+
+        <div className="flex flex-col sm:flex-row justify-center gap-4">
+          <Link
+            to="/support"
+            className="w-full sm:flex-1 bg-surface-container-high text-primary font-body-lg text-body-lg px-xl py-md rounded-lg font-bold hover:bg-surface-bright transition-all text-center"
+          >
+            Visit Support
+          </Link>
+          <a
+            href={GITHUB_NEW_ISSUE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full sm:flex-1 bg-primary text-background font-body-lg text-body-lg px-xl py-md rounded-lg font-bold hover:opacity-90 transition-all text-center"
+          >
+            Report on GitHub
+          </a>
         </div>
-        <div className="space-y-sm">
-          <label className="font-label-sm text-label-sm text-secondary uppercase tracking-widest px-xs">
-            Message
-          </label>
-          <textarea
-            className="w-full bg-surface-container-low border-none rounded-lg text-primary placeholder:text-[#555555] focus:bg-surface-container-high focus:ring-0 transition-all py-md px-lg resize-none"
-            placeholder="How can we help?"
-            rows={4}
-          />
-        </div>
-        <button
-          type="button"
-          className="w-full bg-surface-container-high text-primary font-bold py-md rounded-lg hover:bg-surface-bright transition-all"
-        >
-          Send Message
-        </button>
+
+        <p className="mt-6 text-secondary font-body-md text-body-md opacity-60">
+          <a
+            href={GITHUB_ISSUES_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-primary transition-colors"
+          >
+            View all issues
+          </a>
+        </p>
       </div>
     </section>
   )
