@@ -1,5 +1,6 @@
 import type { ReactNode } from "react"
 import { Link } from "react-router-dom"
+import { BrandLink } from "./Logo"
 import {
   DOCS_URL,
   GITHUB_REPO_URL,
@@ -17,12 +18,7 @@ export function DocLayout({ title, children }: DocLayoutProps) {
     <div className="min-h-screen bg-background text-primary">
       <header className="border-b border-white/8 bg-background/80 backdrop-blur-md sticky top-0 z-50">
         <div className="max-w-3xl mx-auto px-container-padding py-md flex items-center justify-between gap-md">
-          <Link
-            to="/"
-            className="font-headline-lg-mobile text-headline-lg-mobile font-extrabold tracking-tighter hover:opacity-80 transition-opacity"
-          >
-            Infill
-          </Link>
+          <BrandLink />
           <nav className="flex flex-wrap items-center gap-x-4 gap-y-1 text-[13px] text-secondary">
             <Link to="/docs" className="hover:text-primary transition-colors">
               Docs

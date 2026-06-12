@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom"
 import { GITHUB_REPO_URL } from "../lib/site"
+import { BrandLink } from "./Logo"
 
 type FooterLink =
   | { label: string; to: string }
@@ -18,9 +19,7 @@ export function Footer() {
   return (
     <footer className="w-full px-container-padding py-xl flex flex-col md:flex-row justify-between items-start md:items-center gap-lg bg-surface-container-lowest">
       <div className="flex flex-col gap-sm">
-        <div className="font-title-md text-title-md text-primary font-extrabold tracking-tighter">
-          Infill
-        </div>
+        <BrandLink size="sm" />
         <div className="text-secondary font-body-md text-body-md opacity-60">
           &copy; {new Date().getFullYear()} Infill. All rights reserved.
         </div>

@@ -1,4 +1,5 @@
 import { MaterialIcon } from "./MaterialIcon"
+import { Logo } from "./Logo"
 
 const quickActions = [
   {
@@ -137,12 +138,7 @@ export function ExtensionMockup() {
     <div className="w-full max-w-[380px] bg-[#0a0a0a] rounded-2xl border border-white/8 bento-card-shadow overflow-hidden">
       {/* Header */}
       <div className="flex items-center justify-between px-4 pt-4 pb-3">
-        <div className="flex items-center gap-2.5">
-          <img src="/favicon.svg" alt="Infill" className="w-7 h-7" />
-          <span className="text-[18px] font-extrabold text-white tracking-tight">
-            Infill
-          </span>
-        </div>
+        <Logo size="sm" showText textClassName="text-[18px] font-extrabold text-white tracking-tight" />
         <div className="flex items-center gap-2">
           <button
             type="button"
