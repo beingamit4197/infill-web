@@ -34,6 +34,7 @@ Live site: **https://infill-landing-4197.web.app**
 |------|-----|
 | Home | https://infill-landing-4197.web.app |
 | Docs | https://infill-landing-4197.web.app/docs |
+| OpenAI key guide | https://infill-landing-4197.web.app/docs/openai-api-key |
 | Support | https://infill-landing-4197.web.app/support |
 | Privacy | https://infill-landing-4197.web.app/privacy-policy |
 

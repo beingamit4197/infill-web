@@ -1,9 +1,11 @@
 import { Link } from "react-router-dom"
 import { DocLayout } from "../components/DocLayout"
 import {
+  GEMINI_KEY_GUIDE_URL,
   GITHUB_ISSUES_URL,
   GITHUB_NEW_ISSUE_URL,
   GITHUB_REPO_URL,
+  OPENAI_KEY_GUIDE_URL,
 } from "../lib/site"
 
 export function SupportPage() {
@@ -48,7 +50,8 @@ export function SupportPage() {
           Infill works on normal <code>http</code> and <code>https</code> pages.
         </li>
         <li>
-          Chrome internal pages such as <code>chrome://</code> cannot be scanned.
+          Chrome internal pages such as <code>chrome://</code> cannot be
+          scanned.
         </li>
         <li>
           Click <strong>Scan Page</strong> again instead of refreshing the tab.
@@ -57,8 +60,34 @@ export function SupportPage() {
 
       <h3>AI Analyze or Shuffle fails</h3>
       <ul>
-        <li>Add a valid OpenAI API key in extension settings.</li>
-        <li>Make sure the key has access to the selected model.</li>
+        <li>
+          Open <strong>AI settings</strong> and choose{" "}
+          <strong>OpenAI</strong> or <strong>Gemini</strong>.
+        </li>
+        <li>
+          For OpenAI, follow{" "}
+          <Link to="/docs/openai-api-key">How to get your OpenAI API key</Link>{" "}
+          and paste the key, then click <strong>Save settings</strong>.
+        </li>
+        <li>
+          For Gemini, create a key at{" "}
+          <a
+            href={GEMINI_KEY_GUIDE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Google AI Studio
+          </a>
+          , paste it in the Gemini tab, and save.
+        </li>
+        <li>
+          Make sure the badge shows <strong>Ready</strong> for the active
+          provider.
+        </li>
+        <li>
+          Confirm billing or quota is active on your OpenAI or Google AI
+          account.
+        </li>
         <li>Scan the page first so fields are available.</li>
       </ul>
 
@@ -97,6 +126,18 @@ export function SupportPage() {
       <ul>
         <li>
           <Link to="/docs">Documentation</Link>
+        </li>
+        <li>
+          <a href={OPENAI_KEY_GUIDE_URL}>How to get your OpenAI API key</a>
+        </li>
+        <li>
+          <a
+            href={GEMINI_KEY_GUIDE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Gemini API keys (Google AI Studio)
+          </a>
         </li>
         <li>
           <Link to="/privacy-policy">Privacy policy</Link>

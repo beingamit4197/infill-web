@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
 import { DocLayout } from "../components/DocLayout"
-import { GITHUB_ISSUES_URL } from "../lib/site"
+import { GEMINI_KEY_GUIDE_URL, GITHUB_ISSUES_URL } from "../lib/site"
 
 export function DocsPage() {
   return (
@@ -33,7 +33,7 @@ export function DocsPage() {
         </li>
         <li>
           <strong>AI Analyze</strong> — generates context-aware values using
-          your OpenAI key.
+          your OpenAI or Gemini key.
         </li>
         <li>
           <strong>Shuffle All</strong> — creates new random or AI-shuffled
@@ -59,13 +59,29 @@ export function DocsPage() {
         </li>
       </ul>
 
-      <h2>AI features</h2>
+      <h2>AI features (Bring Your Own Key)</h2>
       <p>
-        AI Analyze and Shuffle need an OpenAI API key. Open{" "}
-        <strong>OpenAI API Key</strong> in the popup, paste your key, and click{" "}
-        <strong>Save key</strong>. The key stays in your browser and is only
-        used when you run AI actions.
+        <strong>AI Analyze</strong> and <strong>AI Shuffle</strong> need your
+        own API key. Open <strong>AI settings</strong> in the popup, choose{" "}
+        <strong>OpenAI</strong> or <strong>Gemini</strong>, paste your key,
+        pick a model, and click <strong>Save settings</strong>. The key stays
+        in your browser and is only sent to that provider when you run an AI
+        action.
       </p>
+      <ul>
+        <li>
+          <Link to="/docs/openai-api-key">How to get your OpenAI API key</Link>
+        </li>
+        <li>
+          <a
+            href={GEMINI_KEY_GUIDE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Get a Gemini API key (Google AI Studio)
+          </a>
+        </li>
+      </ul>
 
       <h2>Image uploads</h2>
       <p>

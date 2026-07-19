@@ -1,4 +1,6 @@
 import { MaterialIcon } from "./MaterialIcon"
+import { Link } from "react-router-dom"
+import { GEMINI_KEY_GUIDE_URL } from "../lib/site"
 
 const aiCapabilities = [
   {
@@ -14,17 +16,17 @@ const aiCapabilities = [
       "Regenerates every mapped field with fresh AI values — or random data when no API key is set.",
   },
   {
-    icon: "sync_alt",
-    title: "Per-field Shuffle",
+    icon: "tune",
+    title: "OpenAI or Gemini",
     description:
-      "Shuffle a single field from its card without re-running a full form scan.",
+      "Choose your provider in AI settings. Paste an OpenAI or Gemini key, pick a model, and save locally.",
   },
 ]
 
 const trustPoints = [
-  "Your OpenAI API key is stored locally in Chrome — never on Infill servers.",
+  "OpenAI and Gemini keys are stored locally in Chrome — never on Infill servers.",
   "AI runs only when you click Analyze or Shuffle — no background requests.",
-  "Uses OpenAI directly (gpt-4o-mini) with your own key — bring your own key (BYOK).",
+  "Bring your own key (BYOK): pay OpenAI or Google directly; Infill does not bill for AI.",
   "Without a key, scan, auto-fill, clear, and random shuffle still work for free.",
 ]
 
@@ -42,9 +44,9 @@ export function AiFeatures() {
           Context-aware fills, on your terms
         </h2>
         <p className="font-body-lg text-body-lg text-secondary opacity-80 max-w-2xl mx-auto">
-          Infill sends form and page context to OpenAI only when you run AI
-          Analyze or Shuffle. Paste your API key once — it stays in your
-          browser.
+          Infill sends form and page context to OpenAI or Google Gemini only
+          when you run AI Analyze or Shuffle. Choose a provider, paste your API
+          key once — it stays in your browser.
         </p>
       </div>
 
@@ -74,7 +76,7 @@ export function AiFeatures() {
         <h3 className="font-title-md text-title-md text-primary mb-md text-center">
           Privacy-first AI
         </h3>
-        <ul className="space-y-3">
+        <ul className="space-y-3 mb-6">
           {trustPoints.map((point) => (
             <li key={point} className="flex items-start gap-3">
               <MaterialIcon
@@ -88,6 +90,24 @@ export function AiFeatures() {
             </li>
           ))}
         </ul>
+        <p className="text-center text-secondary font-body-md text-body-md">
+          <Link to="/docs/openai-api-key" className="text-primary hover:underline">
+            OpenAI key guide
+          </Link>
+          {" · "}
+          <a
+            href={GEMINI_KEY_GUIDE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-primary hover:underline"
+          >
+            Gemini API keys
+          </a>
+          {" · "}
+          <Link to="/privacy-policy" className="text-primary hover:underline">
+            Privacy policy
+          </Link>
+        </p>
       </div>
     </section>
   )

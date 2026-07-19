@@ -37,6 +37,16 @@
         "source": "/index.html",
         "destination": "/docs",
         "type": 301
+      },
+      {
+        "source": "/openai-api-key.html",
+        "destination": "/docs/openai-api-key",
+        "type": 301
+      },
+      {
+        "source": "/docs/openai-api-key.html",
+        "destination": "/docs/openai-api-key",
+        "type": 301
       }
     ],
     "rewrites": [

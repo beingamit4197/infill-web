@@ -23,6 +23,12 @@ export function DocLayout({ title, children }: DocLayoutProps) {
             <Link to="/docs" className="hover:text-primary transition-colors">
               Docs
             </Link>
+            <Link
+              to="/docs/openai-api-key"
+              className="hover:text-primary transition-colors"
+            >
+              OpenAI key
+            </Link>
             <Link to="/support" className="hover:text-primary transition-colors">
               Support
             </Link>

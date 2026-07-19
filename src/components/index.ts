@@ -1,5 +1,7 @@
 export { AiFeatures } from "./AiFeatures"
 export { Logo, BrandLink } from "./Logo"
+export { CursorGlow } from "./CursorGlow"
+export { HeroBackdrop } from "./HeroBackdrop"
 export { ExtensionMockup } from "./ExtensionMockup"
 export { TopNavBar } from "./TopNavBar"
 export { Hero } from "./Hero"

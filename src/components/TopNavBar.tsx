@@ -1,4 +1,4 @@
-import { GITHUB_REPO_URL } from "../lib/site"
+import { CHROME_WEB_STORE_URL } from "../lib/site"
 import { BrandLink } from "./Logo"
 
 export function TopNavBar() {
@@ -27,12 +27,12 @@ export function TopNavBar() {
           </a>
         </div>
         <a
-          href={GITHUB_REPO_URL}
+          href={CHROME_WEB_STORE_URL}
           target="_blank"
           rel="noopener noreferrer"
           className="bg-primary text-on-primary font-body-lg text-body-lg py-sm px-lg rounded-lg font-bold hover:opacity-90 active:scale-95 transition-all duration-200"
         >
-          Install Extension
+          Add to Chrome
         </a>
       </div>
     </nav>

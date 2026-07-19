@@ -1,9 +1,9 @@
 import { MaterialIcon } from "./MaterialIcon"
-import { GITHUB_REPO_URL } from "../lib/site"
+import { CHROME_WEB_STORE_URL } from "../lib/site"
 
 const benefits = [
   "Scan, auto-fill, and clear forms",
-  "AI Analyze & Shuffle with your OpenAI key",
+  "AI Analyze & Shuffle with OpenAI or Gemini (BYOK)",
   "Contextual image uploads for file fields",
   "Open source — full access to the code",
 ]
@@ -48,12 +48,12 @@ export function Pricing() {
         </ul>
 
         <a
-          href={GITHUB_REPO_URL}
+          href={CHROME_WEB_STORE_URL}
           target="_blank"
           rel="noopener noreferrer"
           className="block w-full text-center bg-primary text-background font-bold py-3.5 rounded-lg hover:opacity-90 transition-all"
         >
-          Download from GitHub
+          Add to Chrome
         </a>
       </div>
     </section>
